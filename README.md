@@ -1,50 +1,54 @@
-# Welcome to your Expo app 👋
+# React Expo Blog Posts App with TanStack Query
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a simple blog posts app built using React, Expo, and TanStack Query for managing API requests. 
+It allows fetching, creating, updating, deleting, and filtering fictional Ipsum Lorem blog posts.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Fetch Posts**: Retrieve all posts from the server.
+- **Create Post**: Add a new post.
+- **Update Post**: Edit an existing post.
+- **Patch Post Title**: Update only the title of a post.
+- **Delete Post**: Remove a post.
+- **Filter Posts**: Filter posts by user ID.
 
-   ```bash
-   npm install
-   ```
+## Technologies Used
 
-2. Start the app
+- **React (Expo)**: A framework for building cross-platform mobile apps.
+- **TanStack Query**: A powerful library for server-state management in React apps.
+- **Axios**: A promise-based HTTP client for making API requests.
+- **JSONPlaceholder**: A fake online REST API for testing and prototyping.
 
-   ```bash
-    npx expo start
-   ```
+## Interact with the application:
 
-In the output, you'll find options to open the app in a
+Fetch Posts: Posts are auto fetched on loading app.
+Filter by User ID: Enter a user ID in the input field to filter posts.
+Create Post: Enter the title and body of a new post and click "Create Post".
+Edit Post: Click the "Edit" button, modify title and body, and click "Update Post".
+Patch Post Title: Click the "Update Title" button, modify the title, and click "Submit Title Update".
+Delete Post: Click the "Delete" button on a post to remove it.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## App Component:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+State Management: useState for form inputs and local state for posts.
+Fetching Posts: useQuery from TanStack Query to fetch posts from JSONPlaceholder.
+Creating, Updating, and Deleting Posts: useMutation from TanStack Query for creating, updating, and deleting.
+Patching Post Title: useMutation from TanStack Query for patching title.
+Local State: Maintains local copy of posts to reflect changes immediately.
 
-## Get a fresh project
+## Key Functions:
 
-When you're ready, run:
+fetchPosts: Fetch posts from API.
+createPost: Create new post.
+updatePost: Update an existing post.
+patchPostTitle: Patch title of an existing post.
+deletePost: Delete post.
 
-```bash
-npm run reset-project
-```
+## API Functions:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+fetchPosts(filterUserId: string): Fetches posts, optionally filtering by user ID.
+createPost(newPost: NewPost): Creates new post.
+updatePost(updatedPost: Post): Updates existing post.
+patchPostTitle(id: number, title: string): Updates title of an existing post.
+deletePost(id: number): Deletes post by ID.
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
